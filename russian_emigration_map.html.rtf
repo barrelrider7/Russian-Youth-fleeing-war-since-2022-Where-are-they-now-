@@ -1,0 +1,94 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\froman\fcharset0 Times-Bold;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red0\green0\blue233;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c0\c0\c93333;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}}
+\margl1440\margr1440\vieww14560\viewh12180\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf0 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 <title>Russian Emigration Hotspots Map</title> <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"> <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script> <style> #map \{ height: 600px; \} .leaflet-control.legend \{ background: white; padding: 10px; border: 2px solid rgba(0,0,0,0.2); border-radius: 5px; \} </style>\
+\
+<script> var map = L.map('map').setView([40, 50], 3);\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 L.tileLayer('https://\{s\}.tile.openstreetmap.org/\{z\}/\{x\}/\{y\}.png', \{\
+attribution: '\'a9 {\field{\*\fldinst{HYPERLINK "https://www.openstreetmap.org/copyright"}}{\fldrslt \cf3 \ul \ulc3 \strokec3 OpenStreetMap}} contributors'\
+\}).addTo(map);\
+var hotspots = [\
+\{ city: 'Yerevan', lat: 40.1772, lon: 44.5035, remain: 110000 \},\
+\{ city: 'Tbilisi', lat: 41.7151, lon: 44.8271, remain: 60000 \},\
+\{ city: 'Almaty', lat: 43.2389, lon: 76.8897, remain: 80000 \},\
+\{ city: 'Astana', lat: 51.1694, lon: 71.4491, remain: 80000 \},\
+\{ city: 'Bishkek', lat: 42.8746, lon: 74.5698, remain: 65000 \},\
+\{ city: 'Tashkent', lat: 41.3111, lon: 69.2406, remain: 100000 \},\
+\{ city: 'Belgrade', lat: 44.7872, lon: 20.4573, remain: 30000 \},\
+\{ city: 'Podgorica', lat: 42.4304, lon: 19.2594, remain: 21000 \},\
+\{ city: 'Berlin', lat: 52.5200, lon: 13.4050, remain: 36000 \},\
+\{ city: 'London', lat: 51.5074, lon: -0.1278, remain: 15000 \},\
+\{ city: 'Istanbul', lat: 41.0151, lon: 28.9795, remain: 100000 \},\
+\{ city: 'Antalya', lat: 36.8969, lon: 30.7133, remain: 100000 \},\
+\{ city: 'Tel Aviv', lat: 32.0853, lon: 34.7818, remain: 62000 \},\
+\{ city: 'Dubai', lat: 25.2048, lon: 55.2708, remain: 20000 \},\
+\{ city: 'Phuket', lat: 7.8790, lon: 98.3984, remain: 20000 \},\
+\{ city: 'Bangkok', lat: 13.7367, lon: 100.5232, remain: 20000 \},\
+\{ city: 'Denpasar', lat: -8.6705, lon: 115.2126, remain: 10000 \},\
+\{ city: 'Ho Chi Minh City', lat: 10.8231, lon: 106.6297, remain: 10000 \},\
+\{ city: 'Ulaanbaatar', lat: 47.8864, lon: 106.9057, remain: 13000 \},\
+\{ city: 'Buenos Aires', lat: -34.6037, lon: -58.3816, remain: 10000 \},\
+\{ city: 'New York', lat: 40.7128, lon: -74.0060, remain: 39000 \},\
+\{ city: 'Toronto', lat: 43.6532, lon: -79.3832, remain: 3600 \},\
+\{ city: 'Mexico City', lat: 19.4326, lon: -99.1332, remain: 1000 \}\
+];\
+hotspots.forEach(function(hotspot) \{\
+L.marker([hotspot.lat, hotspot.lon]).addTo(map)\
+.bindTooltip(hotspot.city + '\
+Remained: ' + hotspot.remain.toLocaleString(), \{ permanent: false \});\
+\});\
+var countries = [\
+\{ name: 'Armenia', fled: 110000, remained: 110000 \},\
+\{ name: 'Georgia', fled: 200000, remained: 60000 \},\
+\{ name: 'Kazakhstan', fled: 150000, remained: 80000 \},\
+\{ name: 'Kyrgyzstan', fled: 446000, remained: 65000 \},\
+\{ name: 'Uzbekistan', fled: 100000, remained: 100000 \},\
+\{ name: 'Serbia', fled: 220000, remained: 30000 \},\
+\{ name: 'Montenegro', fled: 113000, remained: 21000 \},\
+\{ name: 'Germany', fled: 36000, remained: 36000 \},\
+\{ name: 'UK', fled: 15000, remained: 15000 \},\
+\{ name: 'Turkey', fled: 100000, remained: 100000 \},\
+\{ name: 'Israel', fled: 75000, remained: 62000 \},\
+\{ name: 'UAE', fled: 20000, remained: 20000 \},\
+\{ name: 'Thailand', fled: 20000, remained: 20000 \},\
+\{ name: 'Indonesia', fled: 10000, remained: 10000 \},\
+\{ name: 'Vietnam', fled: 10000, remained: 10000 \},\
+\{ name: 'Mongolia', fled: 13000, remained: 13000 \},\
+\{ name: 'Argentina', fled: 50000, remained: 10000 \},\
+\{ name: 'US', fled: 48000, remained: 39000 \},\
+\{ name: 'Canada', fled: 3600, remained: 3600 \},\
+\{ name: 'Mexico', fled: 1000, remained: 1000 \}\
+];\
+var legend = L.control(\{ position: 'topright' \});\
+legend.onAdd = function(map) \{\
+var div = L.DomUtil.create('div', 'leaflet-control legend');\
+div.innerHTML = '\
+\pard\pardeftab720\sa319\partightenfactor0
+
+\f1\b \cf0 Countries (Fled / Remained)\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0
+\f0\b0 \cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 '; countries.forEach(function(country) \{ div.innerHTML += '\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 ' + country.name + ': ' + country.fled.toLocaleString() + ' / ' + country.remained.toLocaleString() + '\
+\pard\tx220\tx720\pardeftab720\li720\fi-720\partightenfactor0
+\ls1\ilvl0\cf0 \kerning1\expnd0\expndtw0 \outl0\strokewidth0 {\listtext	\uc0\u8226 	}\expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 '; \}); div.innerHTML += '\
+\pard\pardeftab720\partightenfactor0
+\cf0 '; return div; \};\
+\pard\pardeftab720\sa240\partightenfactor0
+\cf0 \
+legend.addTo(map);\
+</script>\
+}
